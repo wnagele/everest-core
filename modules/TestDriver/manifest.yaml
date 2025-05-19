@@ -1,0 +1,21 @@
+description: Driver module for the Test hardware
+config:
+  serial_port:
+    description: Serial port the Test hardware is connected to
+    type: string
+    default: /dev/ttyUSB0
+  baud_rate:
+    description: Serial baud rate to use when communicating with the Test hardware
+    type: integer
+    minimum: 9600
+    maximum: 230400
+    default: 115200
+provides:
+  board_support:
+    interface: evse_board_support
+    description: provides the board support Interface to low level control control pilot, relais, motor lock
+enable_telemetry: true
+metadata:
+  license: https://opensource.org/licenses/Apache-2.0
+  authors:
+    - Wolfgang Nagele
