@@ -37,6 +37,7 @@ ev_add_module(DummyTokenProviderManual)
 ev_add_module(PhyVersoBSP)
 ev_add_module(IsabellenhuetteIemDcr)
 ev_add_module(TestDriver)
+ev_add_module(TestEvDriver)
 
 add_subdirectory(examples)
 add_subdirectory(simulation)
