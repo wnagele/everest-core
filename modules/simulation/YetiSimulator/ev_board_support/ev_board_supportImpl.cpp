@@ -28,6 +28,7 @@ void ev_board_supportImpl::handle_enable(bool& value) {
 }
 
 void ev_board_supportImpl::handle_set_cp_state(types::ev_board_support::EvCpState& cp_state) {
+    EVLOG_error << "handle_set_cp_state: " << cp_state;
     using types::ev_board_support::EvCpState;
     auto& simdata_setting = mod->module_state->simdata_setting;
 
@@ -53,6 +54,7 @@ void ev_board_supportImpl::handle_set_cp_state(types::ev_board_support::EvCpStat
 }
 
 void ev_board_supportImpl::handle_allow_power_on(bool& value) {
+    EVLOG_error << "handle_allow_power_on: " << value;
     EVLOG_debug << "EV Power On: " << value;
 }
 

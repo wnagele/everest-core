@@ -57,6 +57,7 @@ void evse_board_supportImpl::handle_pwm_F() {
 }
 
 void evse_board_supportImpl::handle_allow_power_on(types::evse_board_support::PowerOnOff& value) {
+    EVLOG_error << "handle_allow_power_on: " << value.allow_power_on;
     mod->module_state->power_on_allowed = value.allow_power_on;
 }
 

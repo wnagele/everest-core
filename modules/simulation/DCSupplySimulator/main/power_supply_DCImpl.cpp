@@ -49,7 +49,7 @@ void power_supply_DCImpl::handle_setMode(types::power_supply_DC::Mode& _mode,
                                          types::power_supply_DC::ChargingPhase& phase) {
     mode = _mode;
 
-    EVLOG_info << "Set mode: " << types::power_supply_DC::mode_to_string(mode)
+    EVLOG_error << "Set mode: " << types::power_supply_DC::mode_to_string(mode)
                << " ChargingPhase: " << types::power_supply_DC::charging_phase_to_string(phase);
 
     std::scoped_lock access_lock(power_supply_values_mutex);
@@ -82,6 +82,7 @@ void power_supply_DCImpl::handle_setExportVoltageCurrent(double& voltage, double
     double temp_current = current;
 
     clampVoltageCurrent(temp_voltage, temp_current);
+    EVLOG_error << "handle_setExportVoltageCurrent: " << temp_voltage << " " << temp_current;
 
     std::scoped_lock access_lock(power_supply_values_mutex);
     settings_connector_export_voltage = temp_voltage;
@@ -98,6 +99,7 @@ void power_supply_DCImpl::handle_setImportVoltageCurrent(double& voltage, double
     double temp_current = current;
 
     clampVoltageCurrent(temp_voltage, temp_current);
+    EVLOG_error << "handle_setImportVoltageCurrent: " << temp_voltage << " " << temp_current;
 
     std::scoped_lock access_lock(power_supply_values_mutex);
     settings_connector_import_voltage = temp_voltage;
