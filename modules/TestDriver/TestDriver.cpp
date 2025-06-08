@@ -161,7 +161,7 @@ void TestDriver::readThread() {
     size_t bufLen = 0;
 
     std::regex pattern_CP(R"(STATE,CP=(A|B|C|D|E|F))");
-    std::regex pattern_PP(R"(STATE,PP=(NOT_CONNECTED|CONNECTED_ERROR|CONNECTED|BUTTON_PRESSED|63A-3P_70A-1P|32A|20A|13A))");
+    std::regex pattern_PP(R"(STATE,PP=(DISCONNECTED|LATCHED|UNLATCHED|13A|20A|32A|63A-3P_70A-1P))");
 
     while (true) {
         if (readThreadHandle.shouldExit())
