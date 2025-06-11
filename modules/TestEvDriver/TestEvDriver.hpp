@@ -43,6 +43,9 @@ public:
     bool setCharge(bool value);
     bool setDiodeFault(bool value);
     bool setPowerPath(bool value);
+    types::board_support_common::BspEvent last_cp;
+    types::board_support_common::ProximityPilot last_pp;
+    double last_duty_cycle;
     // ev@1fce4c5e-0ab8-41bb-90f7-14277703d2ac:v1
 
 protected:
